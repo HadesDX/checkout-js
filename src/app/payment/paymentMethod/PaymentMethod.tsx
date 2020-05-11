@@ -129,6 +129,7 @@ const PaymentMethodComponent: FunctionComponent<PaymentMethodProps & WithCheckou
     }
 
     if (method.gateway === PaymentMethodId.Afterpay ||
+        method.id === PaymentMethodId.Bolt ||
         method.id === PaymentMethodId.Laybuy ||
         method.id === PaymentMethodId.Zip ||
         method.method === PaymentMethodType.Paypal ||
