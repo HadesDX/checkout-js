@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "appVersion": "1.39.0",
+  "appVersion": "1.39.1-alpha.1589906599168",
   "dynamicChunks": {
     "js": [
-      "billing-f326131c.js",
-      "billing~shipping-39ed2bf8.js",
-      "cart-summary-drawer-a1d32fb9.js",
-      "cart-summary-939ba797.js",
-      "cart-summary~cart-summary-drawer-2eda5b2e.js",
-      "customer-40bf3a85.js",
-      "order-summary-drawer-62b2de1b.js",
-      "order-summary-e0db434a.js",
-      "payment-558c82b8.js",
-      "shipping-8bd58ca4.js",
+      "billing-1a64a149.js",
+      "billing~shipping-53c49682.js",
+      "cart-summary-drawer-0a61de9d.js",
+      "cart-summary-2effe10f.js",
+      "cart-summary~cart-summary-drawer-805360e6.js",
+      "customer-a422f612.js",
+      "order-summary-drawer-03d6193f.js",
+      "order-summary-dd210298.js",
+      "payment-943fe534.js",
+      "shipping-0bf06e4c.js",
       "transients~billing~shipping-6b2c8fc0.js",
       "vendors~billing~payment~shipping-9f1fa89c.js",
-      "vendors~billing~shipping-7610bb18.js"
+      "vendors~billing~shipping-5dc9598d.js"
     ],
     "css": [
       "billing~shipping-12a891f5.css",
@@ -31,14 +31,14 @@
     ]
   },
   "js": [
-    "runtime-571e026d.js",
+    "runtime-077a48c1.js",
     "polyfill~checkout-9513a1d1.js",
     "transients~checkout-dedfceb4.js",
     "sentry~checkout-373057d6.js",
     "vendors~checkout-ecc7f497.js",
-    "checkout-49bfba9f.js"
+    "checkout-f794268d.js"
   ],
   "css": [
-    "checkout-957512aa.css"
+    "checkout-e07c359c.css"
   ]
 }

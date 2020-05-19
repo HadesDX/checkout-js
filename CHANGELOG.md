@@ -2,6 +2,71 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.39.1-alpha.1589906599168](https://github.com/bigcommerce/checkout-js/compare/v1.26.0...v1.39.1-alpha.1589906599168) (2020-05-19)
+
+
+### Bug Fixes
+
+* **checkout:** CHECKOUT-4573 Removed extra zero after decimal for gift certificate value ([493e737](https://github.com/bigcommerce/checkout-js/commit/493e737))
+* **checkout:** CHECKOUT-4774 Fix for invalid container Id issue with non hosted fields ([3a3f78e](https://github.com/bigcommerce/checkout-js/commit/3a3f78e))
+* **checkout:** CHECKOUT-4852 Handle error case when order submission fails because of expired or invalid spam protection token ([114aa9d](https://github.com/bigcommerce/checkout-js/commit/114aa9d))
+* **checkout:** CHECKOUT-4852 Initialize reCaptcha when user interacts with form element rather than automatically ([cc48d84](https://github.com/bigcommerce/checkout-js/commit/cc48d84))
+* **common:** CHECKOUT-4835 Upgrade `request-sender` package version ([aad0b2e](https://github.com/bigcommerce/checkout-js/commit/aad0b2e))
+* **customer:** CHECKOUT-4739 Rename hasAccount to shouldEncourageSignIn ([#262](https://github.com/bigcommerce/checkout-js/issues/262)) ([26ceb63](https://github.com/bigcommerce/checkout-js/commit/26ceb63))
+* **customer:** CHECKOUT-4880 Copy changes in passwordless login ([bc4e6a5](https://github.com/bigcommerce/checkout-js/commit/bc4e6a5))
+* **order:** CHECKOUT-4809 Improve message for orders in pending and incomplete status ([846fbbd](https://github.com/bigcommerce/checkout-js/commit/846fbbd))
+* **payment:** CHECKOUT-4842 Add missing class name which causes fields to be misaligned in tablet view ([99382d3](https://github.com/bigcommerce/checkout-js/commit/99382d3))
+* **payment:** CHECKOUT-4842 Add missing placeholder text to hosted expiration field ([000549c](https://github.com/bigcommerce/checkout-js/commit/000549c))
+* **payment:** CHECKOUT-4842 Add missing tooltip for CVV field ([28f5cca](https://github.com/bigcommerce/checkout-js/commit/28f5cca))
+* **payment:** CHECKOUT-4842 Submit hosted payment form when "enter" key is pressed ([ce71693](https://github.com/bigcommerce/checkout-js/commit/ce71693))
+* **payment:** CHECKOUT-4852 Check for status code instead as quick fix ([1666289](https://github.com/bigcommerce/checkout-js/commit/1666289))
+* **payment:** CHECKOUT-4852 Only show human verification message on mount if exceeded limit ([ff199b6](https://github.com/bigcommerce/checkout-js/commit/ff199b6))
+* **payment:** INT-2427 Use ExpiryDate while paying with a vaulted Bancontact card rather than CVV ([5e2ca88](https://github.com/bigcommerce/checkout-js/commit/5e2ca88))
+* **payment:** PAYMENTS-5178 Default vaulted instrument is not used as default payment method ([4637f04](https://github.com/bigcommerce/checkout-js/commit/4637f04))
+* **payment:** PAYMENTS-5380 Checkout payment methods list is not complete if default vaulted instrument is not BT ([8f267c1](https://github.com/bigcommerce/checkout-js/commit/8f267c1))
+
+
+### Code Refactoring
+
+* **common:** CHECKOUT-4752 refactor address css to be included inside js files ([763016e](https://github.com/bigcommerce/checkout-js/commit/763016e))
+* **common:** CHECKOUT-4780 Changes for including CSS in module files ([08af9f2](https://github.com/bigcommerce/checkout-js/commit/08af9f2))
+
+
+### Features
+
+* **checkout:** INT-2350 Bump `checkout-sdk` version ([08c9d71](https://github.com/bigcommerce/checkout-js/commit/08c9d71))
+* **checkout:** INT-2602 Replace Barclaycard's Place Order text ([efe1834](https://github.com/bigcommerce/checkout-js/commit/efe1834))
+* **common:** CHECKOUT-4879 Render flash messages as popup ([a3ce461](https://github.com/bigcommerce/checkout-js/commit/a3ce461))
+* **common:** CHECKOUT-4882 Consume flash messages from SDK ([5946e0d](https://github.com/bigcommerce/checkout-js/commit/5946e0d))
+* **customer:** CHECKOUT-4739 Encourage guest to sign-in if account exists ([134e5cd](https://github.com/bigcommerce/checkout-js/commit/134e5cd))
+* **customer:** CHECKOUT-4740 Enforce log-in when account exists ([e2fe0c4](https://github.com/bigcommerce/checkout-js/commit/e2fe0c4))
+* **customer:** CHECKOUT-4791 Use subscriptions endpoint for newsletter signup ([6580ac6](https://github.com/bigcommerce/checkout-js/commit/6580ac6))
+* **customer:** CHECKOUT-4799 Add passwordless login link ([f07e789](https://github.com/bigcommerce/checkout-js/commit/f07e789))
+* **customer:** INT-2473 change place order button for bluesnapv2 ([fe27424](https://github.com/bigcommerce/checkout-js/commit/fe27424))
+* **payment:** CHECKOUT-4304 Apply store credit using endpoint ([38ae017](https://github.com/bigcommerce/checkout-js/commit/38ae017))
+* **payment:** INT-1104 Bump SDK. ([ba16b14](https://github.com/bigcommerce/checkout-js/commit/ba16b14))
+* **payment:** INT-2280 added GooglePay for Checkout.com ([43219aa](https://github.com/bigcommerce/checkout-js/commit/43219aa))
+* **payment:** INT-2410 CHECKOUT-4789 Bump checkout-sdk ([42698a0](https://github.com/bigcommerce/checkout-js/commit/42698a0))
+* **payment:** INT-2418 Bump checkout-sdk ([161964e](https://github.com/bigcommerce/checkout-js/commit/161964e))
+* **payment:** INT-2422 Updated title for credit card on adyen v2 ([e47726c](https://github.com/bigcommerce/checkout-js/commit/e47726c))
+* **payment:** INT-2427 Bump checkout-sdk ([fabfe3a](https://github.com/bigcommerce/checkout-js/commit/fabfe3a))
+* **payment:** INT-2428 Modify filter to accept AccountInstruments ([6b5486b](https://github.com/bigcommerce/checkout-js/commit/6b5486b))
+* **payment:** INT-2432 Addressed feedback comments ([f539757](https://github.com/bigcommerce/checkout-js/commit/f539757))
+* **payment:** INT-2432 Addressed last comment from Luis ([81c4ddc](https://github.com/bigcommerce/checkout-js/commit/81c4ddc))
+* **payment:** INT-2432 Comments from  Luis addressed ([c7b1e81](https://github.com/bigcommerce/checkout-js/commit/c7b1e81))
+* **payment:** INT-2432 Hide expiration date when Adyen Bancontact is using instruments ([25f05f3](https://github.com/bigcommerce/checkout-js/commit/25f05f3))
+* **payment:** INT-2484 Add additional payment method marks ([966ad52](https://github.com/bigcommerce/checkout-js/commit/966ad52))
+* **payment:** INT-2541 boilerplate laybuy ([95b0286](https://github.com/bigcommerce/checkout-js/commit/95b0286))
+* **payment:** INT-2611 Bump checkout-sdk ([e16524d](https://github.com/bigcommerce/checkout-js/commit/e16524d))
+* **payment:** PAYPAL-19 bump checkout-sdk-js for PayPal Commerce release ([0702489](https://github.com/bigcommerce/checkout-js/commit/0702489))
+* **payment:** PAYPAL-287 Add logo of paypal commerce ([3f398e0](https://github.com/bigcommerce/checkout-js/commit/3f398e0))
+* **payment:** PAYPAL-293 Bump checkout-sdk-js to 1.65.0 ([1df6383](https://github.com/bigcommerce/checkout-js/commit/1df6383))
+
+
+### Performance Improvements
+
+* **customer:** CHECKOUT-4799 Use useMemo instead of useCallback ([38e369d](https://github.com/bigcommerce/checkout-js/commit/38e369d))
+
 ## [1.39.0](https://github.com/bigcommerce/checkout-js/compare/v1.38.0...v1.39.0) (2020-05-12)
 
 
