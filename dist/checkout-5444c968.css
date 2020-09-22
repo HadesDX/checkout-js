@@ -4015,6 +4015,12 @@ h6 a:hover {
   opacity: 0.9;
   z-index: 20; }
 
+.creditCardTypes-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 1em; }
+
 .creditCardTypes-list-item {
   opacity: 1;
   transition: all 0.6s ease-out; }
@@ -4736,7 +4742,8 @@ h6 a:hover {
 
 @media (min-width: 551px) {
   .paymentProviderHeader-cc {
-    float: right; } }
+    float: right;
+    max-width: 14em; } }
 
 .paymentMethod--creditCard,
 .paymentMethod--hosted,
@@ -5304,4 +5311,4 @@ body.klarna-payments-fso-open {
     font-weight: normal; }
 
 
-/*# sourceMappingURL=checkout-52344743.css.map*/
+/*# sourceMappingURL=checkout-5444c968.css.map*/
