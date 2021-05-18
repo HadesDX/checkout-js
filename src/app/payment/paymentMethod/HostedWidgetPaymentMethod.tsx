@@ -36,7 +36,7 @@ export interface HostedWidgetPaymentMethodProps {
     shouldShowEditButton?: boolean;
     shouldRenderCustomInstrument?: boolean;
     renderCustomPaymentForm?(): React.ReactNode;
-    validateInstrument?(shouldShowNumberField: boolean): React.ReactNode;
+    validateInstrument?(shouldShowNumberField: boolean, selectedInstrument?: CardInstrument): React.ReactNode;
     deinitializeCustomer?(options: CustomerRequestOptions): Promise<CheckoutSelectors>;
     deinitializePayment(options: PaymentRequestOptions): Promise<CheckoutSelectors>;
     initializeCustomer?(options: CustomerInitializeOptions): Promise<CheckoutSelectors>;
@@ -232,16 +232,16 @@ class HostedWidgetPaymentMethod extends Component<
         } = this.props;
 
         const { selectedInstrumentId = this.getDefaultInstrumentId() } = this.state;
-        const selectedInstrument = find(instruments, { bigpayToken: selectedInstrumentId });
-        const shouldShowNumberField = selectedInstrument ? isInstrumentCardNumberRequiredProp(selectedInstrument as CardInstrument) : false;
-        const shouldShowCardCodeField = selectedInstrument ? isInstrumentCardCodeRequiredProp(selectedInstrument as CardInstrument, method) : false;
+        const selectedInstrument = find(instruments, { bigpayToken: selectedInstrumentId }) as CardInstrument;
+        const shouldShowNumberField = selectedInstrument ? isInstrumentCardNumberRequiredProp(selectedInstrument) : false;
+        const shouldShowCardCodeField = selectedInstrument ? isInstrumentCardCodeRequiredProp(selectedInstrument, method) : false;
 
         if (hideVerificationFields) {
             return;
         }
 
         if (validateInstrument) {
-            return validateInstrument(shouldShowNumberField);
+            return validateInstrument(shouldShowNumberField, selectedInstrument);
         }
 
         return (
