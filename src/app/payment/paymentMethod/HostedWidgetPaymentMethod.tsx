@@ -36,11 +36,11 @@ export interface HostedWidgetPaymentMethodProps {
     shouldShowEditButton?: boolean;
     shouldRenderCustomInstrument?: boolean;
     renderCustomPaymentForm?(): React.ReactNode;
-    validateInstrument?(shouldShowNumberField: boolean): React.ReactNode;
+    validateInstrument?(shouldShowNumberField: boolean, selectedInstrument?: CardInstrument): React.ReactNode;
     deinitializeCustomer?(options: CustomerRequestOptions): Promise<CheckoutSelectors>;
     deinitializePayment(options: PaymentRequestOptions): Promise<CheckoutSelectors>;
     initializeCustomer?(options: CustomerInitializeOptions): Promise<CheckoutSelectors>;
-    initializePayment(options: PaymentInitializeOptions, selectedInstrumentId?: string): Promise<CheckoutSelectors>;
+    initializePayment(options: PaymentInitializeOptions, selectedInstrument?: CardInstrument): Promise<CheckoutSelectors>;
     onPaymentSelect?(): void;
     onSignOut?(): void;
     onSignOutError?(error: Error): void;
@@ -232,16 +232,16 @@ class HostedWidgetPaymentMethod extends Component<
         } = this.props;
 
         const { selectedInstrumentId = this.getDefaultInstrumentId() } = this.state;
-        const selectedInstrument = find(instruments, { bigpayToken: selectedInstrumentId });
-        const shouldShowNumberField = selectedInstrument ? isInstrumentCardNumberRequiredProp(selectedInstrument as CardInstrument) : false;
-        const shouldShowCardCodeField = selectedInstrument ? isInstrumentCardCodeRequiredProp(selectedInstrument as CardInstrument, method) : false;
+        const selectedInstrument = find(instruments, { bigpayToken: selectedInstrumentId }) as CardInstrument;
+        const shouldShowNumberField = selectedInstrument ? isInstrumentCardNumberRequiredProp(selectedInstrument) : false;
+        const shouldShowCardCodeField = selectedInstrument ? isInstrumentCardCodeRequiredProp(selectedInstrument, method) : false;
 
         if (hideVerificationFields) {
             return;
         }
 
         if (validateInstrument) {
-            return validateInstrument(shouldShowNumberField);
+            return validateInstrument(shouldShowNumberField, selectedInstrument);
         }
 
         return (
@@ -344,6 +344,7 @@ class HostedWidgetPaymentMethod extends Component<
             isSignInRequired,
             initializeCustomer = noop,
             initializePayment = noop,
+            instruments,
             method,
             setSubmit,
             signInCustomer = noop,
@@ -367,10 +368,12 @@ class HostedWidgetPaymentMethod extends Component<
 
         setSubmit(method, null);
 
+        const selectedInstrument = instruments.find(instrument => instrument.bigpayToken === selectedInstrumentId) || instruments[0];
+
         return initializePayment({
             gatewayId: method.gateway,
             methodId: method.id,
-        }, selectedInstrumentId);
+        }, selectedInstrument);
     }
 
     private getDefaultInstrumentId(): string | undefined {
