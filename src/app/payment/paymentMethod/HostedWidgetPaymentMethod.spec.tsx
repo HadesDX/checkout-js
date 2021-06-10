@@ -449,5 +449,11 @@ describe('HostedWidgetPaymentMethod', () => {
             expect(container.find('.form-field--saveInstrument'))
                 .toHaveLength(1);
         });
+
+        it('sets validation schema when component mounts', () => {
+            mount(<HostedWidgetPaymentMethodTest { ...defaultProps } />);
+            expect(paymentContext.setValidationSchema)
+                .toHaveBeenCalled();
+        });
     });
 });
