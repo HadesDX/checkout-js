@@ -123,6 +123,7 @@ class Customer extends Component<CustomerProps & WithCheckoutCustomerProps, Cust
                         checkEmbeddedSupport={ checkEmbeddedSupport }
                         deinitialize={ deinitializeCustomer }
                         initialize={ initializeCustomer }
+                        isInitializing={ isInitializing }
                         methodIds={ checkoutButtonIds }
                         onError={ onUnhandledError }
                     />
