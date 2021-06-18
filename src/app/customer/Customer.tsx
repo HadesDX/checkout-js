@@ -130,8 +130,7 @@ class Customer extends Component<CustomerProps & WithCheckoutCustomerProps, Cust
                 }
                 defaultShouldSubscribe={ defaultShouldSubscribe }
                 email={ this.draftEmail || email }
-                isContinuingAsGuest={ isContinuingAsGuest }
-                isLoading={ isInitializing }
+                isLoading={ isContinuingAsGuest || isInitializing }
                 onChangeEmail={ this.handleChangeEmail }
                 onContinueAsGuest={ this.handleContinueAsGuest }
                 onShowLogin={ this.handleShowLogin }

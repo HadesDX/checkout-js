@@ -16,7 +16,6 @@ describe('GuestForm', () => {
         defaultProps = {
             canSubscribe: true,
             defaultShouldSubscribe: false,
-            isContinuingAsGuest: false,
             isLoading: false,
             onChangeEmail: jest.fn(),
             onContinueAsGuest: jest.fn(),

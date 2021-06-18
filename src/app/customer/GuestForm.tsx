@@ -16,7 +16,6 @@ export interface GuestFormProps {
     requiresMarketingConsent: boolean;
     defaultShouldSubscribe: boolean;
     email?: string;
-    isContinuingAsGuest: boolean;
     isLoading: boolean;
     privacyPolicyUrl?: string;
     onChangeEmail(email: string): void;
@@ -32,7 +31,6 @@ export interface GuestFormValues {
 const GuestForm: FunctionComponent<GuestFormProps & WithLanguageProps & FormikProps<GuestFormValues>> = ({
     canSubscribe,
     checkoutButtons,
-    isContinuingAsGuest,
     isLoading,
     onChangeEmail,
     onShowLogin,
@@ -83,7 +81,7 @@ const GuestForm: FunctionComponent<GuestFormProps & WithLanguageProps & FormikPr
                         <Button
                             className="customerEmail-button"
                             id="checkout-customer-continue"
-                            isLoading={ isContinuingAsGuest || isLoading }
+                            isLoading={ isLoading }
                             testId="customer-continue-as-guest-button"
                             type="submit"
                             variant={ ButtonVariant.Primary }
@@ -94,7 +92,7 @@ const GuestForm: FunctionComponent<GuestFormProps & WithLanguageProps & FormikPr
                 </div>
 
                 {
-                    !(isContinuingAsGuest || isLoading) && <p>
+                    !isLoading && <p>
                         <TranslatedString id="customer.login_text" />
                         { ' ' }
                         <a
