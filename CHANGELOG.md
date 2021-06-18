@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.147.1-alpha.1624044593988](https://github.com/bigcommerce/checkout-js/compare/v1.147.1-alpha.1623446266381...v1.147.1-alpha.1624044593988) (2021-06-18)
+
+
+### Bug Fixes
+
+* **customer:** INT-3604 Collapse variables into isLoading ([9e81ff5](https://github.com/bigcommerce/checkout-js/commit/9e81ff5bc38d97f4450a9a663edee296afc187ed))
+
 ### [1.147.1-alpha.1623446266381](https://github.com/bigcommerce/checkout-js/compare/v1.82.1...v1.147.1-alpha.1623446266381) (2021-06-11)
 
 
